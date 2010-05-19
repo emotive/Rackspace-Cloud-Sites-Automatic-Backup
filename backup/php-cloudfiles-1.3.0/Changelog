@@ -1,0 +1,15 @@
+20090311 - v1.3.0 <ej@racklabs.com>
+  * Support for list operations in JSON/XML
+  * Added support for FileInfo automatic Content-Type/MIME detection
+  * Workaround for cURL's old CA bundle with CF_Connection->ssl_use_cabundle()
+  * Supports limit/marker on Account and Container lists
+  * Support "pathname" traversal on Container lists
+  * Helper function on Container to create directory marker Objects
+  * Support for chunked transfer on PUT requests
+  * TODO Support/tested on Windows XP (PHP v5.2.9)
+
+20081210 - v1.2.3 <ej@racklabs.com>
+  * Improved in-line comments and generated HTML docs
+  * Callbacks for read/write progress on CF_Connection class
+  * Fixed minor bugs
+  * Started this Changelog

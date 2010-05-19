@@ -1,0 +1,66 @@
+Rackspace Cloud Sites Backup Cron
+
+This set of scripts automatically backs up your Rackspace Cloud Sites and database to Cloud Files
+
+
+Copyright (C) 2010  emotive, llc
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+INSTALL
+
+Edit backup.sh
+
+* Replace MYSQLHOSTNAME with your MySQL Hostname (Internal IP for Racksapce)
+* Replace MYSQLUSER with your MySQL database user
+* Replace MYSQLPASSWORD with your MySQL password
+* Replace MYSQLDATABASE with your MySQL database name
+
+Then do a find and replace for 'YOURSITEPATH' and replace that with the path to your /web/ folder on your site.  This can be found in your features tab of Cloud Sites.  For example:
+
+/mnt/stor1-wc1-dfw1/375570/452262/www.yourdomain.com/web/
+
+
+Next edit backup.php
+
+* Replace RACKSPACELOGIN with your master Rackspace user ID
+* Replace APIKEY with your Rackspace API key (found under Your Account in control panel)
+* Replace CLOUDCONTAINERNAME with the container in Cloud Files where you want backups to reside
+* And like above replace YOURSITEPATH with your path up to /web/
+
+Save the files and upload the entire backup folder to your /web/ folder
+
+
+Now setup the cron jobs in your cloud site under the Features tab
+
+You need to first run backup.sh then wait an hour and run backup.php
+
+For CRON 1:
+
+* Set the name and e-mail address for output to whatever you want
+* Set the type to perl
+* Set the command to run to web/backup/backup.sh
+* Set the frequency and run time (every day at 1am recommended)
+
+For CRON 2:
+
+* Set the name and e-mail address for output to whatever you want
+* Set the type to php
+* Set the command to run to web/backup/backup.php
+* Set the frequency and run time (every day at 2am recommended)
+
+
+
+

@@ -1,0 +1,58 @@
+;; PHP Cloud Files API
+;; ========================================================================
+;;   This package contains the PHP API for the Cloud Files storage system.
+;;
+;;   Please see http://www.mosso.com for more information regarding the
+;;   Cloud Files storage system.
+;;
+;; Install
+;; ------------------------------------------------------------------------
+;;   Extract this archive and make sure the source code files are in your
+;;   PHP "include path".  To use the API in your source code, just make
+;;   sure to include/require the "cloudfiles.php" script.
+;;
+;; Requirements
+;; ------------------------------------------------------------------------
+;;   PHP version 5.x (developed against 5.2.0)
+;;   PHP's cURL module
+;;   PHP enabled with mbstring (multi-byte string) support
+;;
+;; Examples
+;; ------------------------------------------------------------------------
+;;   For sample code, please see the tests and API docs.
+;;
+;; Docs
+;; ------------------------------------------------------------------------
+;;   The included documentation was generated directly from the source
+;;   code files using the PHPDocumentor tool.
+;;
+;;   This README file is actually the PHPDocumentor INI configuration file.
+;;   The following packages were installed via PEAR to generate the HTML
+;;   API documentation.
+;;
+;;     * PEAR              1.4.11  (stable)
+;;     * PhpDocumentor     1.4.2   (stable)
+;;     * XML_Beautifier    1.2.0   (stable)
+;;     * XML_Parser        1.3.1   (stable)
+;;     * XML_Util          1.2.0   (stable)
+;;
+;;   To re-generate the API docs, make sure the above software is
+;;   available and run:
+;;      rm -rf docs && phpdoc -c phpdoc.ini
+;;
+;;
+;; ========================================================================
+;; The lines below here are the configuration settings for re-generating
+;; the PHP API documentation.
+;;
+[Parse Data]
+title = php-cloudfiles
+hidden = false
+parseprivate = off
+javadocdesc = off
+defaultpackagename = php-cloudfiles
+defaultcategoryname = php-cloudfiles
+target = docs
+directory = .
+ignore = examples/,tests/
+output=HTML:Smarty:PHP

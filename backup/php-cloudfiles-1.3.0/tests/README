@@ -1,0 +1,30 @@
+There are two options for running the test suite.
+
+1) Command-line: Modify "cloudfiles_ini.php" and put in your valid
+   Mosso Username and API Access Key.  Then invoke the shell wrapper
+   script "run_tests.sh" from this directory.
+
+2) Web script: Set up an Apache instance/vhost to serve this directory
+   as its DocumentRoot.  When "index.php" is called, you need to enter
+   a valid Mosso Username and API Access Key.
+
+   NOTE: Modify your Apache instance to serve the "index.php" file.  One way is
+   to add a file similar to the one below to your <tt>/etc/apache2/conf.d</tt>
+   directory and restart Apache.  You could then invoke the page by pointing
+   your browser to
+   <a href="http://localhost/php-cloudfiles">http://localhost/php-cloudfiles</a>.
+
+    <VirtualHost *>
+      Alias /php-cloudfiles /home/ej/php-cloudfiles/tests
+
+      DocumentRoot /home/ej/php-cloudfiles/tests
+      <Directory /home/ej/php-cloudfiles/tests>
+        Options Indexes
+        AllowOverride None
+      </Directory>
+    </VirtualHost>
+
+Troubleshooting:  If the tests fail for some reason, the Cloud Files account
+will be let in an inconsistent state with respect to the parital test run.
+Correct any errors and re-run the tests two times to re-sync the account's
+test data with a full start-to-finish test run.  Rinse and repeat.
