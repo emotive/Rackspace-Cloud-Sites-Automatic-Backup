@@ -1,4 +1,5 @@
-<?php	
+<?php
+ ini_set("memory_limit", "512M"); 	
  require("php-cloudfiles-1.3.0/cloudfiles.php");
  
  $backupsToKeep = 5; // # of backup files to keep
